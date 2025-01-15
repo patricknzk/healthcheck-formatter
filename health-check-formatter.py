@@ -28,7 +28,7 @@ def format_health_checks(df):
     for _, row in df.iterrows():
         desexed_status = "Desexed" if row["Desexed"].strip().lower() == "yes" else "ENTIRE"
         combined_entry = {
-            "Customer & Pet": f"{row['Customer']}, {row['Pet']}",
+            "Customer & Pet": f"{row['Customer'][0]}, {row['Pet']}",
             "Check-In Date": row["Checkin"],
             "Check-Out Date": row["Checkout"],
             "Sex & Desexed": f"{row['Sex']}, {desexed_status}",
